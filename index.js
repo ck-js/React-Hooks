@@ -54,9 +54,27 @@ const App3 = (props) => {
   )
 }
 
+const App4 = () => {
+  const [userName, updateUserName] = useState("");
+  return (
+    <div>
+      <h1>Enter Username</h1>
+      <p>Username</p>
+      <input
+      type="text"
+      placeholder="Username"
+      value={userName}
+      onChange={(e) => 
+      updateUserName(e.target.value)
+    }
+    />
+    <p>{userName} is already taken</p>
+    </div>
+  )
+}
 
 ReactDOM.render(
-<App3
+<App4
   />,
   document.getElementById("root")
 )
