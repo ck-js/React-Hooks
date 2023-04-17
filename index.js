@@ -73,8 +73,24 @@ const App4 = () => {
   )
 }
 
+const App5 = () => {
+  var items = [
+    {id:"1111A", text: "T Shirt"}
+  ]
+
+  return (
+    <div>
+    <h2>Your Cart</h2>
+    <p>Your cart contains the following items</p>
+    <ul>
+      { items.map(item =>{return < li
+      key={item.id}>{item.text}</li>})
+      }</ul>  
+    </div>
+  )
+}
 ReactDOM.render(
-<App4
+<App5
   />,
   document.getElementById("root")
 )
