@@ -89,8 +89,23 @@ const App5 = () => {
     </div>
   )
 }
+
+const App6 = () => {
+  const [clicked, toggleClick] = useState(false);
+  let text = "I want to be clicked, so click me";
+  if (clicked) 
+    text= "I am done being clicked, unclick me";
+
+    return (
+      <button onClick={() => {toggleClick(!clicked)}}>
+        {text}
+      </button>
+    )
+}
+
+
 ReactDOM.render(
-<App5
+<App6
   />,
   document.getElementById("root")
 )
