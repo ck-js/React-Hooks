@@ -103,9 +103,57 @@ const App6 = () => {
     )
 }
 
+const App7 = () => {
+  const [text, setText] = useState("");
+
+  return (
+    <div>
+      <h1>Boogle Forms</h1>
+      <label for="answer">Whats the circumference of the earth
+      <span>in kilometres?</span></label>
+<input
+type="text"
+placeholder="Kilometres"
+value={text}
+onChange={(event)=> {
+  setText(event.target.value)
+}}
+/>
+    </div>
+  )
+}
+
+const App8 = () => {
+  const [color, setColor] = useState("black");
+
+  return (
+    <div>
+    <h1>Boogle Forms</h1>
+    <label for="answer" style={{color:color}}>
+    Whats your favorite color?</label>
+    <select
+    id="answer"
+    value={color}
+    onChange={(event) => {
+      setColor(event.target.value)
+    }}
+    >
+      <option value="black">Black</option>
+      <option value="gray">Gray</option>
+      <option value="purple">Purple</option>
+      <option value="blue">Blue</option>
+      <option value="green">Green</option>
+
+    </select>
+    <p>You picked {color}</p>
+    </div>
+  )
+}
+
+
 
 ReactDOM.render(
-<App6
+<App8
   />,
   document.getElementById("root")
 )
