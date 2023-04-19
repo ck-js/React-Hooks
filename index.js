@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.css';   
 
 
 class App1 extends React.Component {
@@ -174,9 +174,30 @@ return (
 
 }
 
+const App10 = () => {
+  const [value, updateValue] = useState(0);
+  const [multiplication, setMultiplication] = useState(0);
 
+useEffect(() => {
+  setMultiplication(value * 3);
+})  
+return (
+  <div>
+    <h1>Multiply by 3</h1>
+    <p>The answer is {multiplication}</p>
+    <input
+    type="number"
+    placeholder="Input number"
+    value={value}
+    onChange={(event) => {
+      updateValue(event.target.value)
+    }}
+    />
+  </div>
+)
+}
 ReactDOM.render(
-<App9
+<App10
   />,
   document.getElementById("root")
 )
