@@ -177,14 +177,19 @@ return (
 const App10 = () => {
   const [value, updateValue] = useState(0);
   const [multiplication, setMultiplication] = useState(0);
+  const [ division, setDivision] = useState(0);
 
 useEffect(() => {
   setMultiplication(value * 3);
 })  
+useEffect(() => {
+  setDivision(value / 3)
+})
 return (
   <div>
     <h1>Multiply by 3</h1>
     <p>The answer is {multiplication}</p>
+    <p>The answer is {division}</p>
     <input
     type="number"
     placeholder="Input number"
@@ -193,9 +198,19 @@ return (
       updateValue(event.target.value)
     }}
     />
+    <input
+    type="number"
+    placeholder="Divide by 3"
+    value={value}
+    onChange={(event) => {
+      updateValue(event.target.value)
+    }}
+/>
   </div>
 )
 }
+
+
 ReactDOM.render(
 <App10
   />,
