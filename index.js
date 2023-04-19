@@ -227,8 +227,42 @@ const App11 = () => {
   )
 }
 
+const App12 = () => {
+  const [first, setFirst] =useState("");
+  const [second, setSecond] = useState("");
+  const [multiplication, setMultiplication] =
+  useState(null);
+  useEffect(() => {
+    if (multiplication ===null) setMultiplication(first
+      * second)
+  });
+
+  return (
+    <div>
+      <h1>Multiply</h1>
+      <input
+      type="number"
+      value={first}
+      onChange={(event) => {
+        setFirst(event.target.value)
+        setMultiplication(null)
+      }}
+      />
+      <input
+      type="number"
+      value={second}
+      onChange={(event) => {
+        setSecond(event.target.value)
+        setMultiplication(null)
+      }}
+      />
+      <p>You are multiplying {first} by {second}
+      to get {multiplication}</p>
+    </div>
+  )
+}
 ReactDOM.render(
-<App11
+<App12
   />,
   document.getElementById("root")
 )
