@@ -210,9 +210,25 @@ return (
 )
 }
 
+const App11 = () => {
+  const [ count, updateCount] = useState(0);
+
+  useEffect(() => {
+    setTimeout(() => {
+      updateCount(count + 25)
+    }, 1000)
+  });
+
+  return (
+    <div>
+      <h1>One second counter</h1>
+      <p>{count}</p>
+    </div>
+  )
+}
 
 ReactDOM.render(
-<App10
+<App11
   />,
   document.getElementById("root")
 )
