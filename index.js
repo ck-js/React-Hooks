@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
@@ -150,10 +150,33 @@ const App8 = () => {
   )
 }
 
+// react useEffect basics 
+
+const App9 = () => {
+const [message, setMessage] = useState("");
+
+useEffect= (() => {
+  setTimeout(() => {
+let setTo = message.length > 0
+? ""
+: "Get your copy here";
+setMessage(setTo);    
+  }, 100)
+})
+
+return (
+  <div>
+    <h2>New Sale</h2>
+    <p>{message}</p>
+
+  </div>
+);
+
+}
 
 
 ReactDOM.render(
-<App8
+<App9
   />,
   document.getElementById("root")
 )
