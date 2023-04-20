@@ -264,7 +264,7 @@ const App12 = () => {
 
 const App13 = () => {
   const [text, setText] =
-  useState("This piece of code is over twenty 1 characters");
+  useState("");
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -292,8 +292,39 @@ const App13 = () => {
 
 }
 
+const App14 = () => {
+  const [answer, setAnswer] = useState("Very Old School")
+
+  useEffect(() => {
+    document.getElementById("answer").innerText
+    =
+    answer;
+  });
+
+  return (
+    <div>
+      <h1>Book Genres </h1>
+      <select
+      value={answer}
+      onChange={(event) => {
+        setAnswer(event.target.value)
+      }}
+      >
+        <option value="Very Old School">Classic</option> 
+        <option value="smartly written">Detective</option>
+        <option value="very magical">Fantasy</option>
+        <option value="quite scary">Horror</option>
+        <option value="Lovey Dovey">Romance</option>
+      </select>
+      <p>Your favorite genre is obviously 
+        <strong id="answer"></strong>
+      </p>
+    </div>
+  )
+}
+
 ReactDOM.render(
-<App13
+<App14
   />,
   document.getElementById("root")
 )
