@@ -261,8 +261,39 @@ const App12 = () => {
     </div>
   )
 }
+
+const App13 = () => {
+  const [text, setText] =
+  useState("This piece of code is over twenty 1 characters");
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    if (text.length > 21) setError("Your answer is too long...");
+    else setError(null)
+  });
+
+  return (
+    <div>
+      <h1>Life Lessons Quote</h1>
+      <h2>In 21 characters or less, tell us your best life lesson quote</h2>
+      <p>{text.length}/21</p>
+      <input
+      value={text}
+      onChange={(event) => {
+        setText(event.target.value)
+      }}
+      />
+      {
+        error &&
+        <p>{error}</p>
+      }
+    </div>
+  )
+
+}
+
 ReactDOM.render(
-<App12
+<App13
   />,
   document.getElementById("root")
 )
