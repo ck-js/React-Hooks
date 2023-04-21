@@ -384,8 +384,40 @@ return (
 
 }
 
+const App17 = () => {
+  const [time, setTime] = useState(0);
+const [visible, isVisible] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const d = new Date();
+      setTime(d.toLocaleTimeString);
+    }, 100);
+
+return () => {
+  clearInterval(interval);
+}    
+  }, [])
+
+  return (
+    <div>
+    <h1>Time with clear interval method</h1>
+    <h2>{time}</h2>
+    {
+      visible &&
+      {App17}
+    }
+<button
+onClick={() => {
+  isVisible(!visible)
+}}>Show / Hide </button>
+</div>
+  )
+}
+
+
 ReactDOM.render(
-<App16
+<App17
   />,
   document.getElementById("root")
 )
