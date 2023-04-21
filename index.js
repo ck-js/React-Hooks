@@ -323,8 +323,33 @@ const App14 = () => {
   )
 }
 
+// useEffect advanced
+  
+const App15 = () => {
+  const [currentTime, setCurrentTime] =
+  useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      let d = new Date();
+      setCurrentTime(d.toLocaleTimeString())
+    }, 100);
+
+    return () => {
+clearInterval(timer);      
+    }
+  }, []);
+
+return (
+  <div>
+    <h1>Current Local Time in Bangkok</h1>
+    <h2>{currentTime}</h2>
+  </div>
+)
+}
+
 ReactDOM.render(
-<App14
+<App15
   />,
   document.getElementById("root")
 )
