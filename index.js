@@ -348,8 +348,44 @@ return (
 )
 }
 
+// use effect hooks with dependacy arrays
+
+const App16 = () => {
+  const [first, updateFirst] = useState("");
+  const [second, updateSecond] = useState("");
+  const [multiple, multiplier] = useState(0);
+
+useEffect(() => {
+  multiplier(first * second);
+}, [first, second]);
+
+return (
+  <div>
+    <h1>Multiplier Calculator</h1>
+    <input
+    type="number"
+    value={first}
+    onChange={(e) => {
+ updateFirst(e.target.value)     
+    }}
+    />
+    <p>Multiplied by...</p>
+    <input
+    type="number"
+    value={second}
+    onChange={(e) => {
+      updateSecond(e.target.value)
+    }}
+    />
+    <p>Equals</p>
+    <h3>{multiple}</h3>
+  </div>
+)
+
+}
+
 ReactDOM.render(
-<App15
+<App16
   />,
   document.getElementById("root")
 )
